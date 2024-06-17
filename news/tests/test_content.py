@@ -17,7 +17,6 @@ class TestHomePage(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        # Вычисляем текущую дату.
         today = datetime.today()
         all_news = [
             News(
@@ -32,7 +31,6 @@ class TestHomePage(TestCase):
         News.objects.bulk_create(all_news)
 
     def test_news_count(self):
-        # Загружаем главную страницу.
         response = self.client.get(self.HOME_URL)
         # Код ответа не проверяем, его уже проверили в тестах маршрутов.
         # Получаем список объектов из словаря контекста.
