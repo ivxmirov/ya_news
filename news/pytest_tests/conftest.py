@@ -46,3 +46,12 @@ def comment(news, author):
         author=author,
     )
     return comment
+
+
+@pytest.fixture
+def form_data(news, author):
+    return {
+        'news': news,
+        'author': author,
+        'text': 'Другой текст'
+    }
